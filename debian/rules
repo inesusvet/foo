@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+# У нас питонячий проект
+DH := dh --with=python2
+
+# Магия для debhelpers7
+%:
+	$(DH) $@
+
+
+# При сборке в пакет мы соберем также и питонячий модуль
+override_dh_auto_install:
+	dh_auto_install
+	dh_auto_install --buildsystem=python_distutils \
+                        --destdir=debian/foo
+
+
+# Запускаем nose-тесты при сборке
+override_dh_auto_test:
+	PYTHONPATH= nosetests -w tests -v
+

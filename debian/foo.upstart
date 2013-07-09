@@ -1,0 +1,11 @@
+description "Python-based Foo"
+author "Ivan Stayzhkin <nesusvet@yandex-team.ru>"
+
+start on runlevel [2345]
+stop on runlevel[!2345]
+
+setuid www-data
+setgid www-data
+
+exec /usr/bin/foo_start.py
+

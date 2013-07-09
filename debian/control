@@ -1,0 +1,21 @@
+Source: foo
+Priority: extra
+Maintainer: Ivan Styazhkin <nesusvet@yandex-team.ru>
+Build-Depends:
+    debhelper (>= 7),
+    python (>= 2.7),
+    python-nose,
+    python-flask
+Section: misc
+Homepage: http://dev.nesusvet.com/foo
+XS-Vcs-Git: git@github.com:inesusvet/foo
+# pycentral and tests
+X-Python-Version: 2.7
+
+Package: foo
+Description: Debianized py-module
+Architecture: any
+Depends:
+    python (>=2.7),
+    python-flask
+
